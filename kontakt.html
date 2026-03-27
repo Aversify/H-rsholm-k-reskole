@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Køreakademiet – Kontakt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/kontakt.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🚗</span>
+      Køreakademiet
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Forside</a></li>
+      <li><a href="pakker.html">Priser</a></li>
+      <li><a href="bilteknik.html">Bilteknik</a></li>
+      <li><a href="forlobet.html">Forløbet</a></li>
+      <li><a href="om-os.html">Om os</a></li>
+      <li><a href="kontakt.html" class="active">Kontakt</a></li>
+    </ul>
+    <a href="tel:+4592902092" class="btn-primary">Ring til os</a>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="section-label">Vi er klar til at hjælpe</p>
+    <h1>Tag fat i os – vi svarer <span class="accent">hurtigt</span></h1>
+    <p>Har du spørgsmål til et forløb, en pakke eller noget helt andet? Udfyld formularen eller kontakt os direkte.</p>
+  </div>
+
+  <!-- CONTACT GRID -->
+  <div class="contact-section">
+
+    <!-- LEFT: Form -->
+    <div class="contact-form">
+      <h2>Send os en <span class="accent">besked</span></h2>
+
+      <div class="form-success" id="formSuccess">
+        ✅ Tak for din besked! Vi vender tilbage inden for 1 arbejdsdag.
+      </div>
+
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Fornavn</label>
+            <input type="text" id="fname" placeholder="Dit fornavn" required />
+          </div>
+          <div class="form-group">
+            <label for="lname">Efternavn</label>
+            <input type="text" id="lname" placeholder="Dit efternavn" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="din@email.dk" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" placeholder="12 34 56 78" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Emne</label>
+          <select id="subject" required>
+            <option value="" disabled selected>Vælg emne…</option>
+            <option>Lovpakke – 14.499 kr.</option>
+            <option>Lynpakke – 16.499 kr.</option>
+            <option>Weekendpakke – 15.900 kr.</option>
+            <option>Automatgearpakken – 14.499 kr.</option>
+            <option>Generhvervelse +3 år – 2.900 kr.</option>
+            <option>Generhvervelse −3 år – 5.499 kr.</option>
+            <option>Generelt spørgsmål</option>
+            <option>Andet</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Foretrukken lokation</label>
+          <select id="location">
+            <option value="" disabled selected>Vælg lokation…</option>
+            <option>Holte – Kongsvej 329B</option>
+            <option>Virum – Frederiksdalsve 74A</option>
+            <option>Hørsholm – Usserød Kongevej 22</option>
+            <option>Ingen præference</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Besked</label>
+          <textarea id="message" placeholder="Skriv gerne lidt om dig selv og hvad du ønsker at vide mere om…"></textarea>
+        </div>
+
+        <div class="form-consent">
+          <input type="checkbox" id="consent" required />
+          <label for="consent">Jeg accepterer, at Køreakademiet må kontakte mig i forbindelse med min henvendelse. Se vores <a href="#">privatlivspolitik</a>.</label>
+        </div>
+
+        <button type="submit" class="btn-submit">Send besked →</button>
+      </form>
+    </div>
+
+    <!-- RIGHT: Sidebar -->
+    <aside class="contact-sidebar">
+
+      <div class="info-card">
+        <h3>Kontaktinformation</h3>
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div class="info-item-text">
+            <span class="info-item-label">Telefon</span>
+            <span class="info-item-value"><a href="tel:+4592902092">92 90 20 92</a></span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">✉️</div>
+          <div class="info-item-text">
+            <span class="info-item-label">E-mail</span>
+            <span class="info-item-value"><a href="mailto:kontakt@køreakademiet.dk">kontakt@køreakademiet.dk</a></span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🏢</div>
+          <div class="info-item-text">
+            <span class="info-item-label">CVR</span>
+            <span class="info-item-value">40332227</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h3>Åbningstider</h3>
+        <div class="hours-row">
+          <span class="hours-day">Mandag – Fredag</span>
+          <span class="hours-time">08:00 – 18:00</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Lørdag</span>
+          <span class="hours-time">09:00 – 14:00</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Søndag</span>
+          <span class="hours-closed">Lukket</span>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h3>Følg os</h3>
+        <div class="info-item">
+          <div class="info-icon">📸</div>
+          <div class="info-item-text">
+            <span class="info-item-label">Instagram</span>
+            <span class="info-item-value"><a href="#">@køreakademiet</a></span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🎵</div>
+          <div class="info-item-text">
+            <span class="info-item-label">TikTok</span>
+            <span class="info-item-value"><a href="#">@køreakademiet</a></span>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">👍</div>
+          <div class="info-item-text">
+            <span class="info-item-label">Facebook</span>
+            <span class="info-item-value"><a href="#">Køreakademiet ApS</a></span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- LOCATIONS -->
+  <div class="locations-section">
+    <div class="locations-inner">
+      <p class="section-label">Find os</p>
+      <h2 class="section-title">Vores <span class="accent">lokationer</span></h2>
+      <p class="section-sub">Vi underviser tre steder i Nordsjælland – vælg den lokation, der passer dig bedst.</p>
+      <div class="locations-grid">
+        <div class="location-card">
+          <h3>📍 Holte</h3>
+          <address>
+            Kongsvej 329B<br />
+            2840 Holte
+          </address>
+          <a href="#" class="map-link">Åbn i Google Maps →</a>
+        </div>
+        <div class="location-card">
+          <h3>📍 Virum</h3>
+          <address>
+            Frederiksdalsve 74A, st.<br />
+            2830 Virum
+          </address>
+          <a href="#" class="map-link">Åbn i Google Maps →</a>
+        </div>
+        <div class="location-card">
+          <h3>📍 Hørsholm</h3>
+          <address>
+            Usserød Kongevej 22<br />
+            2970 Hørsholm
+          </address>
+          <a href="#" class="map-link">Åbn i Google Maps →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="faq-inner">
+      <p class="section-label">Hurtige svar</p>
+      <h2 class="section-title" style="margin-bottom:.5rem">Ofte stillede <span class="accent">spørgsmål</span></h2>
+      <p class="section-sub">Finder du ikke svar her, er du altid velkommen til at kontakte os direkte.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Hvor hurtigt svarer I på henvendelser?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Vi bestræber os på at svare inden for 1 arbejdsdag. Har du travlt, er du altid velkommen til at ringe direkte på 92 90 20 92 – vi er tilgængelige mandag–fredag 08–18 og lørdag 09–14.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Hvornår starter næste hold?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Vi starter løbende nye hold op. Kontakt os for at høre om næste ledige holdstart ved din foretrukne lokation.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Kan jeg ændre eller afmelde mit hold?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Ja, kontakt os hurtigst muligt, så finder vi en løsning. Vi er fleksible og ønsker at tilpasse forløbet bedst muligt til din situation.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Tilbyder I kørsel uden for jeres faste lokationer?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Teoriundervisning foregår på vores faste lokationer. Praktisk kørsel kan aftales med udgangspunkt i din bopæl – kontakt os for nærmere aftale.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Hvornår kan jeg begynde på kørekort?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Du kan starte på undervisningen, når du er 16 år og 9 måneder. Den praktiske prøve kan tidligst afholdes, når du er fyldt 17 år.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">🚗</span>
+          Køreakademiet
+        </a>
+        <p>Professionel køreundervisning med fokus på sikkerhed, tryghed og effektiv læring.</p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="pakker.html">Priser</a></li>
+          <li><a href="bilteknik.html">Bilteknik</a></li>
+          <li><a href="forlobet.html">Forløbet</a></li>
+          <li><a href="om-os.html">Om os</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+4592902092">92 90 20 92</a></li>
+          <li><a href="mailto:kontakt@køreakademiet.dk">kontakt@køreakademiet.dk</a></li>
+          <li><a href="#">CVR: 40332227</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Køreakademiet. Alle rettigheder forbeholdes.</span>
+      <span><a href="#" style="color:#aaa;text-decoration:none;">Privatlivspolitik</a> · <a href="#" style="color:#aaa;text-decoration:none;">Vilkår</a></span>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      btn.closest('.faq-item').classList.toggle('open');
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('formSuccess').style.display = 'block';
+      e.target.reset();
+      e.target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+</body>
+</html>

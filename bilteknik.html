@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Køreakademiet – Bilteknik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/bilteknik.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🚗</span>
+      Køreakademiet
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Forside</a></li>
+      <li><a href="pakker.html">Priser</a></li>
+      <li><a href="bilteknik.html" class="active">Bilteknik</a></li>
+      <li><a href="forlobet.html">Forløbet</a></li>
+      <li><a href="om-os.html">Om os</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a href="tel:+4592902092" class="btn-primary">Ring til os</a>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="section-label">Akademiet</p>
+    <h1>Bliv klar til <span class="accent">prøverne</span></h1>
+    <p>Her finder du korte videoer, der forklarer alt om bilteknik. Brug dem til at forberede dig på den praktiske prøve – du kan altid vende tilbage og genopfriske.</p>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="filter-inner" id="filterBar">
+      <button class="filter-btn active" data-cat="alle" onclick="filterVideos('alle', this)">
+        Alle videoer <span class="filter-count">9</span>
+      </button>
+      <button class="filter-btn" data-cat="motor" onclick="filterVideos('motor', this)">
+        Motor <span class="filter-count">2</span>
+      </button>
+      <button class="filter-btn" data-cat="bremser" onclick="filterVideos('bremser', this)">
+        Bremser & Hjul <span class="filter-count">2</span>
+      </button>
+      <button class="filter-btn" data-cat="eksternt" onclick="filterVideos('eksternt', this)">
+        Eksternt <span class="filter-count">3</span>
+      </button>
+      <button class="filter-btn" data-cat="interioer" onclick="filterVideos('interioer', this)">
+        Interiør <span class="filter-count">2</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- VIDEOS -->
+  <div class="videos-section">
+    <div class="videos-grid" id="videosGrid">
+
+      <!-- Udstødning -->
+      <div class="video-card" data-cat="motor" onclick="openModal(this)">
+        <div class="video-thumb">
+          <div class="video-thumb-bg" style="background: linear-gradient(135deg,#fde8d8,#f5c9a0);">🏎️</div>
+          <div class="play-btn"><div class="play-icon">▶</div></div>
+          <span class="video-duration">3:24</span>
+          <span class="video-category-badge">Motor</span>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Udstødning</div>
+          <div class="video-desc-short">Lær hvad udstødningssystemet gør, og hvad du skal tjekke.</div>
+        </div>
+        <button class="video-expand-btn" onclick="toggleForklaring(event, this)">
+          Forklaring <span class="expand-icon">+</span>
+        </button>
+        <div class="video-forklaring">Udstødningssystemet leder forbrændingsgasser væk fra motoren. Du skal kontrollere, at der ikke er usædvanlig røg, mærkelige lyde eller synlige læk fra rørene. Sort røg kan indikere for rig blanding, hvid røg kan indikere kølevandslæk.</div>
+      </div>
+
+      <!-- Støddæmpere -->
+      <div class="video-card" data-cat="bremser" onclick="openModal(this)">
+        <div class="video-thumb">
+          <div class="video-thumb-bg" style="background: linear-gradient(135deg,#dde8fd,#a0c5f5);">🔧</div>
+          <div class="play-btn"><div class="play-icon">▶</div></div>
+          <span class="video-duration">4:10</span>
+          <span class="video-category-badge">Bremser & Hjul</span>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Støddæmpere</div>
+          <div class="video-desc-short">Forstå hvad støddæmpere er, og hvornår de er slidte.</div>
+        </div>
+        <button class="video-expand-btn" onclick="toggleForklaring(event, this)">
+          Forklaring <span class="expand-icon">+</span>
+        </button>
+        <div class="video-forklaring">Støddæmpere holder hjulene i kontakt med vejen og dæmper stød. Tegn på slidte støddæmpere: bilen bouncer efter en kuppel, unormal dæk-slitage, eller bilen "dykker" hårdt ved opbremsning.</div>
+      </div>
+
+      <!-- Bremser -->
+      <div class="video-card" data-cat="bremser" onclick="openModal(this)">
+        <div class="video-thumb">
+          <div class="video-thumb-bg" style="background: linear-gradient(135deg,#fdd8d8,#f5a0a0);">🛑</div>
+          <div class="play-btn"><div class="play-icon">▶</div></div>
+          <span class="video-duration">5:02</span>
+          <span class="video-category-badge">Bremser & Hjul</span>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Bremser</div>
+          <div class="video-desc-short">Gennemgang af bremsesystemet og tegn på nedslidning.</div>
+        </div>
+        <button class="video-expand-btn" onclick="toggleForklaring(event, this)">
+          Forklaring <span class="expand-icon">+</span>
+        </button>
+        <div class="video-forklaring">Bremserne er et af bilens vigtigste sikkerhedssystemer. Tjek bremsevæsken i beholderbeholderen i motorrum. Lyt efter knitrende lyde ved opbremsning – det kan indikere slidte bremseklodser.</div>
+      </div>
+
+      <!-- Dæk & Slidmønster -->
+      <div class="video-card" data-cat="eksternt" onclick="openModal(this)">
+        <div class="video-thumb">
+          <div class="video-thumb-bg" style="background: linear-gradient(135deg,#e8e8e8,#c0c0c0);">🛞</div>
+          <div class="play-btn"><div class="play-icon">▶</div></div>
+          <span class="video-duration">3:48</span>
+          <span class="video-category-badge">Eksternt</span>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Dæk & Slidmønster</div>
+          <div class="video-desc-short">Lær om minimumsprofilybde og korrekt dæktryk.</div>
+        </div>
+        <button class="video-expand-btn" onclick="toggleForklaring(event, this)">
+          Forklaring <span class="expand-icon">+</span>
+        </button>
+        <div class="video-forklaring">Minimumsprofilybden er 1,6 mm – men for optimal sikkerhed anbefales minimum 3 mm. Tjek slidmarkørerne i dækmønsteret. Forkert dæktryk påvirker bremseevne, brændstofforbrug og dæk-slidage.</div>
+      </div>
+
+      <!-- Horn -->
+      <div class="video-card" data-cat="eksternt" onclick="openModal(this)">
+        <div class="video-thumb">
+          <div class="video-thumb-bg" style="background: linear-gradient(135deg,#fdf5d8,#f5e4a0);">📯</div>
+          <div class="play-btn"><div class="play-icon">▶</div></div>
+          <span class="video-duration">1:55</span>
+          <span class="video-category-badge">Eksternt</span>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Horn</div>
+          <div class="video-desc-short">Hvornår og hvordan hornet bruges korrekt.</div>
+        </div>
+        <button class="video-expand-btn" onclick="toggleForklaring(event, this)">
+          Forklaring <span class="expand-icon">+</span>
+        </button>
+        <div class="video-forklaring">Hornet bruges som et advarselssignal – ikke til at udtrykke irritation. Du skal bruge hornet, hvis du er ved at kollidere med en anden trafikant, eller for at advare andre om fare. Det er ulovligt at bruge hornet unødigt.</div>
+      </div>
+
+      <!-- Lygter -->
+      <div class="video-card" data-cat="eksternt" onclick="openModal(this)">
+        <div class="video-thumb">
+          <div class="video-thumb-bg" style="background: linear-gradient(135deg,#d8f5fd,#a0d8f5);">💡</div>
+          <div class="play-btn"><div class="play-icon">▶</div></div>
+          <span class="video-duration">4:33</span>
+          <span class="video-category-badge">Eksternt</span>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Lygter</div>
+          <div class="video-desc-short">Overblik over alle lygtetyper og hvornår de bruges.</div>
+        </div>
+        <button class="video-expand-btn" onclick="toggleForklaring(event, this)">
+          Forklaring <span class="expand-icon">+</span>
+        </button>
+        <div class="video-forklaring">Kørelyset skal altid være tændt. Nærlys bruges i mørke og dårligt vejr. Fjernlys bruges på mørke landeveje – sluk for det ved modkørende trafik. Tågelygter bruges kun ved tæt tåge, sne eller kraftig regn.</div>
+      </div>
+
+      <!-- Motorvæsker -->
+      <div class="video-card" data-cat="motor" onclick="openModal(this)">
+        <div class="video-thumb">
+          <div class="video-thumb-bg" style="background: linear-gradient(135deg,#d8fde8,#a0f5c0);">🛢️</div>
+          <div class="play-btn"><div class="play-icon">▶</div></div>
+          <span class="video-duration">5:17</span>
+          <span class="video-category-badge">Motor</span>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Motorvæsker</div>
+          <div class="video-desc-short">Olie, kølevand og bremsevæske – hvad du skal tjekke og hvornår.</div>
+        </div>
+        <button class="video-expand-btn" onclick="toggleForklaring(event, this)">
+          Forklaring <span class="expand-icon">+</span>
+        </button>
+        <div class="video-forklaring">Motorolie tjekkes med pejlestaven – niveauet skal ligge mellem min og max. Kølevæsken holdes på korrekt niveau i udviderbeholderen. Bremsevæske tjekkes i den gennemsigtige beholder ved motorummet.</div>
+      </div>
+
+      <!-- Ratslår -->
+      <div class="video-card" data-cat="interioer" onclick="openModal(this)">
+        <div class="video-thumb">
+          <div class="video-thumb-bg" style="background: linear-gradient(135deg,#f5d8fd,#d8a0f5);">🎛️</div>
+          <div class="play-btn"><div class="play-icon">▶</div></div>
+          <span class="video-duration">2:44</span>
+          <span class="video-category-badge">Interiør</span>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Ratslår</div>
+          <div class="video-desc-short">Forstå ratslårets funktion og korrekt brug.</div>
+        </div>
+        <button class="video-expand-btn" onclick="toggleForklaring(event, this)">
+          Forklaring <span class="expand-icon">+</span>
+        </button>
+        <div class="video-forklaring">Ratslåret er en sikkerhedsmekanisme, der låser rattet, når tændingen er slukket og nøglen fjernes. Det forhindrer tyveri af bilen. Rattet frigøres ved at dreje det let, mens du drejer tændingsnøglen.</div>
+      </div>
+
+      <!-- Vinduesviskere -->
+      <div class="video-card" data-cat="interioer" onclick="openModal(this)">
+        <div class="video-thumb">
+          <div class="video-thumb-bg" style="background: linear-gradient(135deg,#d8eafd,#a0c0f5);">🌧️</div>
+          <div class="play-btn"><div class="play-icon">▶</div></div>
+          <span class="video-duration">2:18</span>
+          <span class="video-category-badge">Interiør</span>
+        </div>
+        <div class="video-body">
+          <div class="video-title">Vinduesviskere</div>
+          <div class="video-desc-short">Tjek af viskerblade og sprinklervæske.</div>
+        </div>
+        <button class="video-expand-btn" onclick="toggleForklaring(event, this)">
+          Forklaring <span class="expand-icon">+</span>
+        </button>
+        <div class="video-forklaring">Viskerbladene skal rengøre rudens effektivt uden at smøre eller efterlade striber. Slider de er, bør de udskiftes. Sprinklervæske skal altid være påfyldt – brug frostvæske om vinteren. Sprinklerdyserne kan justeres med en nål.</div>
+      </div>
+
+      <div class="no-results" id="noResults">Ingen videoer fundet i denne kategori.</div>
+
+    </div>
+  </div>
+
+  <!-- VIDEO MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModalBtn()">✕</button>
+      <div class="modal-video" id="modalVideo">▶</div>
+      <div class="modal-body">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">🚗</span>
+          Køreakademiet
+        </a>
+        <p>Professionel køreundervisning med fokus på sikkerhed, tryghed og effektiv læring.</p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="pakker.html">Priser</a></li>
+          <li><a href="bilteknik.html">Bilteknik</a></li>
+          <li><a href="forlobet.html">Forløbet</a></li>
+          <li><a href="om-os.html">Om os</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+4592902092">92 90 20 92</a></li>
+          <li><a href="mailto:kontakt@køreakademiet.dk">kontakt@køreakademiet.dk</a></li>
+          <li><a href="#">CVR: 40332227</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Køreakademiet. Alle rettigheder forbeholdes.</span>
+      <span><a href="#" style="color:#aaa;text-decoration:none;">Privatlivspolitik</a> · <a href="#" style="color:#aaa;text-decoration:none;">Vilkår</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // ── FILTER ──────────────────────────────────────────────
+    function filterVideos(cat, btn) {
+      // Update active tab
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.video-card');
+      let visible = 0;
+
+      cards.forEach(card => {
+        const match = cat === 'alle' || card.dataset.cat === cat;
+        card.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+
+      document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    // ── FORKLARING TOGGLE ────────────────────────────────────
+    function toggleForklaring(e, btn) {
+      e.stopPropagation();
+      const card = btn.closest('.video-card');
+      card.classList.toggle('expanded');
+    }
+
+    // ── MODAL ────────────────────────────────────────────────
+    function openModal(card) {
+      const title = card.querySelector('.video-title').textContent;
+      const desc  = card.querySelector('.video-forklaring').textContent;
+      const emoji = card.querySelector('.video-thumb-bg').textContent.trim();
+
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDesc').textContent  = desc;
+      document.getElementById('modalVideo').textContent = emoji;
+      document.getElementById('modalOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(e) {
+      if (e.target === document.getElementById('modalOverlay')) closeModalBtn();
+    }
+
+    function closeModalBtn() {
+      document.getElementById('modalOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModalBtn();
+    });
+  </script>
+</body>
+</html>
