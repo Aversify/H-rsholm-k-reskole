@@ -19,17 +19,13 @@
 .hero-content { position: relative; z-index: 1; padding: 4rem 5vw; }
 
 .hero-content h1 {
-  font-size: clamp(2rem, 4.5vw, 3rem);
-  font-weight: 800;
   color: #fff;
   margin-bottom: .5rem;
 }
 
 .hero-content p {
   color: rgba(255,255,255,.7);
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: .5px;
+  font-weight: var(--weight-medium);
 }
 
 /* ── PAGE CONTENT ─────────────────────────────────────── */
@@ -70,16 +66,16 @@
   border-radius: 50%;
   background: var(--orange);
   color: #fff;
-  font-size: .9rem;
-  font-weight: 800;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-extrabold);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.step-card h3 { font-size: 1rem; font-weight: 700; }
-.step-card p { font-size: .875rem; color: var(--muted); line-height: 1.75; }
+.step-card h3 { font-size: var(--text-base); font-weight: var(--weight-bold); }
+.step-card p { font-size: var(--text-base); color: var(--muted); line-height: var(--leading-relaxed); }
 .step-card p strong { color: var(--text); font-weight: 600; }
 
 .step-meta {
@@ -91,7 +87,7 @@
   border-top: 1px solid var(--border);
 }
 
-.step-meta-item { display: flex; align-items: flex-start; gap: .5rem; font-size: .8rem; color: var(--muted); line-height: 1.5; }
+.step-meta-item { display: flex; align-items: flex-start; gap: .5rem; font-size: var(--text-sm); color: var(--muted); line-height: var(--leading-snug); }
 .step-meta-item .meta-icon { flex-shrink: 0; font-size: .9rem; margin-top: 1px; }
 .step-meta-item .meta-label { font-weight: 600; color: var(--text); }
 .step-check { color: var(--orange); font-weight: 700; }

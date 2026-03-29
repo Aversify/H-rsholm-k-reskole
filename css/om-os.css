@@ -18,17 +18,13 @@
 .hero-content { position: relative; z-index: 1; padding: 4rem 5vw; }
 
 .hero-content h1 {
-  font-size: clamp(2rem, 4.5vw, 3rem);
-  font-weight: 800;
   color: #fff;
   margin-bottom: .4rem;
 }
 
 .hero-content p {
   color: rgba(255,255,255,.7);
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: .5px;
+  font-weight: var(--weight-medium);
 }
 
 /* ── ABOUT SPLIT ──────────────────────────────────────── */
@@ -58,9 +54,9 @@
   font-size: 4rem;
 }
 
-.about-text h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; line-height: 1.2; margin-bottom: 1.25rem; }
+.about-text h2 { margin-bottom: 1.25rem; }
 .about-text h2 .accent { color: var(--orange); }
-.about-text p { color: var(--muted); font-size: .95rem; line-height: 1.8; margin-bottom: 1rem; }
+.about-text p { color: var(--muted); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: 1rem; }
 .about-text p:last-child { margin-bottom: 0; }
 
 /* ── STATS ────────────────────────────────────────────── */
@@ -75,8 +71,8 @@
   text-align: center;
 }
 
-.stat-number { font-size: 2.5rem; font-weight: 800; color: #fff; line-height: 1; }
-.stat-label { font-size: .85rem; color: rgba(255,255,255,.8); margin-top: .35rem; font-weight: 500; }
+.stat-number { font-size: var(--text-2xl); font-weight: var(--weight-extrabold); color: #fff; line-height: 1; }
+.stat-label { font-size: var(--text-sm); color: rgba(255,255,255,.8); margin-top: .35rem; font-weight: var(--weight-medium); }
 
 /* ── VALUES ───────────────────────────────────────────── */
 .values-section { padding: 5rem 5vw; background: var(--bg-light); }
@@ -91,8 +87,8 @@
 
 .value-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; }
 .value-icon { font-size: 1.75rem; margin-bottom: .9rem; display: block; }
-.value-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
-.value-card p { font-size: .875rem; color: var(--muted); line-height: 1.7; }
+.value-card h3 { font-size: var(--text-base); font-weight: var(--weight-bold); margin-bottom: .5rem; }
+.value-card p { font-size: var(--text-base); color: var(--muted); line-height: var(--leading-relaxed); }
 
 /* ── TEAM ─────────────────────────────────────────────── */
 .team-section { padding: 5rem 5vw; }
@@ -128,10 +124,10 @@
 }
 
 .team-info { padding: 1rem; }
-.team-info h3 { font-size: .95rem; font-weight: 700; margin-bottom: .2rem; }
-.team-role { font-size: .75rem; color: var(--orange); font-weight: 600; margin-bottom: .75rem; display: block; }
+.team-info h3 { font-size: var(--text-base); font-weight: var(--weight-bold); margin-bottom: .2rem; }
+.team-role { font-size: var(--text-xs); color: var(--orange); font-weight: var(--weight-semibold); margin-bottom: .75rem; display: block; }
 .team-links { display: flex; flex-direction: column; gap: .35rem; }
-.team-link { display: flex; align-items: center; gap: .45rem; font-size: .78rem; color: var(--muted); text-decoration: none; transition: color .2s; }
+.team-link { display: flex; align-items: center; gap: .45rem; font-size: var(--text-xs); color: var(--muted); text-decoration: none; transition: color .2s; }
 .team-link:hover { color: var(--text); }
 .team-link .tl-icon { font-size: .85rem; flex-shrink: 0; }
 
@@ -147,9 +143,9 @@
 }
 
 .location-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
-.location-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: .75rem; display: flex; align-items: center; gap: .5rem; }
-.location-card address { font-style: normal; font-size: .875rem; color: var(--muted); line-height: 1.7; }
-.location-card a { font-size: .82rem; color: var(--orange); text-decoration: none; display: inline-block; margin-top: .65rem; font-weight: 600; }
+.location-card h3 { font-size: var(--text-base); font-weight: var(--weight-bold); margin-bottom: .75rem; display: flex; align-items: center; gap: .5rem; }
+.location-card address { font-style: normal; font-size: var(--text-base); color: var(--muted); line-height: var(--leading-relaxed); }
+.location-card a { font-size: var(--text-sm); color: var(--orange); text-decoration: none; display: inline-block; margin-top: .65rem; font-weight: var(--weight-semibold); }
 .location-card a:hover { text-decoration: underline; }
 
 /* ── RESPONSIVE ───────────────────────────────────────── */
