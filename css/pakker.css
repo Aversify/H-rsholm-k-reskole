@@ -155,6 +155,7 @@
 .pkg-section h3 { font-size: var(--text-md); font-weight: var(--weight-extrabold); margin-bottom: .4rem; }
 .pkg-section h3 .accent { color: var(--orange); }
 .pkg-section .sub { color: var(--muted); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: 1.25rem; }
+#pkgSectionTitle { font-size: var(--text-lg); }
 
 .extras-table { width: 100%; border-collapse: collapse; font-size: var(--text-base); }
 .extras-table tr { border-bottom: 1px solid var(--border); }
@@ -204,6 +205,41 @@ footer { margin-top: 4rem; }
 
 /* ── RESPONSIVE ───────────────────────────────────────── */
 @media (max-width: 760px) {
-  .pkg-body { grid-template-columns: 1fr; }
+  .pkg-tabs-wrap { padding: 0 1rem; }
+
+  .pkg-tab {
+    padding: .75rem .95rem;
+    font-size: var(--text-sm);
+  }
+
+  .pkg-tab .tab-price { font-size: var(--text-xs); }
+
+  .pkg-body {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem 1.25rem 0;
+  }
+
+  .price-card { padding: 1.25rem; }
+
+  .extras-table td { padding: .65rem 0; }
+
   .pkg-full { padding-top: 0; }
+}
+
+@media (max-width: 640px) {
+  .extras-table tr {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: .75rem;
+  }
+
+  .extras-table td {
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+  }
+
+  .extras-table td:last-child { padding-left: .75rem; }
+
+  .instructors-grid { grid-template-columns: 1fr; }
 }

@@ -16,7 +16,7 @@
 :root {
   /* Colors */
   --orange: #1F6F78;
-  --accent-secondary: #a5690c;
+  --accent-secondary: #d46a3a;
   --text: #162126;
   --muted: #61727a;
   --bg-light: #f3f7f7;
@@ -376,6 +376,13 @@ nav {
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
+}
+
+.instructor-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  display: block;
+  object-fit: cover;
 }
 
 .instructor-info { padding: .75rem; }

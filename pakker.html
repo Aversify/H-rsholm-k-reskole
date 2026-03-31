@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Køreakademiet – Vores Pakker</title>
+  <title>Hørsholm Køreskole – Vores Pakker</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -16,7 +16,7 @@
   <nav>
     <a href="index.html" class="logo">
       <span class="logo-icon">🚗</span>
-      Køreakademiet
+      Hørsholm Køreskole
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Forside</a></li>
@@ -55,7 +55,6 @@
         <div class="price-amount" id="priceAmount"></div>
         <p class="price-note" id="priceNote"></p>
         <a href="#tilmeld" class="btn-cta-card">Tilmeld dig vores hold</a>
-        <a href="tel:+4592902092" class="btn-outline-card">92 90 20 92</a>
       </div>
     </aside>
 
@@ -64,12 +63,13 @@
 
       <!-- Long description -->
       <div class="pkg-section">
+        <h3 id="pkgSectionTitle"></h3>
         <div id="pkgLongDesc"></div>
       </div>
 
       <!-- Extra costs -->
       <div class="pkg-section" id="extrasSection">
-        <h3>Udgifter udover <span class="accent">pakken</span></h3>
+        <h3>Udgifter udover pakken</h3>
         <p class="sub">Disse udgifter er ikke inkluderet i pakkeprisen og betales direkte til den relevante instans.</p>
         <table class="extras-table" id="extrasTable"></table>
       </div>
@@ -87,28 +87,52 @@
       <p class="sub">Vores erfarne instruktører guider dig hele vejen til kørekortet.</p>
       <div class="instructors-grid">
         <div class="instructor-card">
-          <div class="instructor-placeholder">👩</div>
+          <img
+            class="instructor-photo"
+            src="https://images.unsplash.com/photo-1745434159123-5b99b94206ca?auto=format&fit=crop&w=640&h=860&q=80"
+            alt="Portræt af kørelærer Stine"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="instructor-info">
             <strong>Stine</strong>
             <span>Medejer & kørelærer</span>
           </div>
         </div>
         <div class="instructor-card">
-          <div class="instructor-placeholder">👨</div>
+          <img
+            class="instructor-photo"
+            src="https://images.unsplash.com/photo-1534399315465-2b91232de345?auto=format&fit=crop&w=640&h=860&q=80"
+            alt="Portræt af kørelærer Deniz"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="instructor-info">
             <strong>Deniz</strong>
             <span>Medejer & kørelærer</span>
           </div>
         </div>
         <div class="instructor-card">
-          <div class="instructor-placeholder">🧔</div>
+          <img
+            class="instructor-photo"
+            src="https://images.unsplash.com/photo-1651017810068-7ec4cf8bd7e9?auto=format&fit=crop&w=640&h=860&q=80"
+            alt="Portræt af kørelærer Umar"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="instructor-info">
             <strong>Umar</strong>
             <span>Kørelærer</span>
           </div>
         </div>
         <div class="instructor-card">
-          <div class="instructor-placeholder">👤</div>
+          <img
+            class="instructor-photo"
+            src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Portræt af kørelærer Shahid"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="instructor-info">
             <strong>Shahid</strong>
             <span>Kørelærer</span>
@@ -168,7 +192,7 @@
       <div class="footer-brand">
         <a href="index.html" class="logo">
           <span class="logo-icon">🚗</span>
-          Køreakademiet
+          Hørsholm Køreskole
         </a>
         <p>Professionel køreundervisning med fokus på sikkerhed, tryghed og effektiv læring.</p>
       </div>
@@ -193,7 +217,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Køreakademiet. Alle rettigheder forbeholdes.</span>
+      <span>© 2026 Hørsholm Køreskole. Alle rettigheder forbeholdes.</span>
       <span><a href="#" style="color:#aaa;text-decoration:none;">Privatlivspolitik</a> · <a href="#" style="color:#aaa;text-decoration:none;">Vilkår</a></span>
     </div>
   </footer>
@@ -372,6 +396,8 @@
       document.getElementById('pkgLongDesc').innerHTML = pkg.desc
         .map(p => `<p style="color:var(--muted);font-size:.95rem;line-height:1.8;margin-bottom:.75rem">${p}</p>`)
         .join('');
+
+      document.getElementById('pkgSectionTitle').textContent = pkg.name;
 
       const extrasTable = document.getElementById('extrasTable');
       if (pkg.extras.length) {

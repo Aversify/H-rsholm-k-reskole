@@ -61,6 +61,7 @@
 .hero h1 {
   max-width: 980px;
   margin: 0 auto 1.25rem;
+  font-size: clamp(2.6rem, 6.8vw, 3.35rem);
 }
 
 .hero h1 .accent { color: var(--accent-secondary); }
@@ -460,9 +461,9 @@
   .hero-content { padding: 6.5rem 0 5rem; }
   .hero-kicker { letter-spacing: var(--tracking-wide); }
   .section-cta-row,
-  .section-cta-row-left { justify-content: stretch; }
+  .section-cta-row-left { justify-content: center; }
   .section-cta-row a,
-  .section-cta-row-left a { width: 100%; }
+  .section-cta-row-left a { width: auto; max-width: 100%; }
 }
 
 @media (max-width: 760px) {
